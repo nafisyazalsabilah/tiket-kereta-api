@@ -1,6 +1,7 @@
 // cookie adalah tempat penyimpanan pada browser, biasanya untuk menyimpan data sesi user
 
-import { cookies  } from "next/headers"
+import { cookies } from "next/headers"
+
 
 export const getServerCookie = async (
     key: string

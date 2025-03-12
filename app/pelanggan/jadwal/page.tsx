@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { ScheduleType } from "@/app/karyawan/types";
 import FilterJadwal from "./FilterJadwal"
 
@@ -27,10 +29,10 @@ const getJadwal = async (
   }
 };
 type Props = {
-    searchParams: {
+    searchParams: Promise<{
         departured_location?: string
         arrived_location?: string
-    }
+    }>
 }
 const JadwalPage = async(myProp: Props) => {
     const departured_location = (await myProp.searchParams).departured_location?.toString() || ""

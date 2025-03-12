@@ -1,12 +1,12 @@
 "use client";
 import React, { FormEvent, useState } from "react";
+import { CustomerType } from "../types";
 import { toast, ToastContainer } from "react-toastify";
 import { axiosInstance } from "@/helper/api";
 import { useRouter } from "next/navigation";
-
-import { getServerCookie } from "@/helper/server-cookie";
 import Modal from "@/components/Modal";
-import { CustomerType } from "../types";
+import { getCookie } from "@/helper/client-cookie";
+;
 
 interface props {
   customer: CustomerType;
@@ -25,7 +25,7 @@ const ForgotPasswordCustomer = (myprops: props) => {
     e.preventDefault();
 
     try {
-      const cookie = getServerCookie("token");
+      const cookie = getCookie("token");
       const response: any = await axiosInstance.put(
         `/customer/${myprops.customer.id}`,
         {

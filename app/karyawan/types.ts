@@ -51,7 +51,7 @@ export interface AdminDetailsType {
   createdAt: string
   updatedAt: string
 }
-export interface Customer {
+export interface CustomerType {
   id: number
   nik: string
   name: string

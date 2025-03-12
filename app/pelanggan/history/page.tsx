@@ -1,3 +1,5 @@
+
+
 import { axiosInstance } from '@/helper/api'
 import React from 'react'
 import HistoryCard from './_components/HistoryCard'
@@ -26,10 +28,10 @@ const GetDataHistory = async (departured_time: string, arrived_time: string): Pr
 }
 
 type props = {
-    searchParams: {
+    searchParams: Promise<{
         departured_time?: string
         arrived_time?: string
-    }
+    }>
 }
 
 const page = async (myProps:props) => {

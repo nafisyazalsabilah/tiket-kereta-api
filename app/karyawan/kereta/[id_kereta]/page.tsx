@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 // function to call detail kereta that include gerdong dan kursi
 
 import { getServerCookie } from "@/helper/server-cookie";
@@ -31,14 +32,14 @@ const getDetailKereta = async (
 }
 
 type props = {
-    params: {
+    params: Promise<{
         id_kereta: string
         // sesuai dgn nama foldernya
-    }
+    }>
 }
 const DetailKeretaPage = async (myProp: props) => {
     // get value of selected "id_kereta"
-    const id_kereta = myProp.params.id_kereta
+    const id_kereta = (await myProp.params).id_kereta
     // get data from backend
     const dataKereta = await getDetailKereta(id_kereta)
 
