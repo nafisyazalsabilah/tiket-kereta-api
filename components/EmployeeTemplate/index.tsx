@@ -84,7 +84,7 @@ const EmployeTemplate = (myProp: props) => {
             Data Kereta
           </Link>
           <Link
-            href={`/karyawan/employee`}
+            href={`/karyawan/admin`}
             className="w-full rounded-md text-white p-3 font-semibold hover:bg-blue-500 "
           >
             Data Admin
