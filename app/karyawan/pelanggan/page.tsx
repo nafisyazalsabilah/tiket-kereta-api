@@ -11,7 +11,7 @@ const getCustomers = async (): Promise<CustomerType[]> => {
     try {
         /** get token from cookie */
         const TOKEN = await getServerCookie(`token`);
-        const url = `/pelanggan`;
+        const url = `/customer`;
         /** hit endpoint */
         const response: any = await axiosInstance.get(url, {
             headers: {
